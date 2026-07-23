@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    container_name: lecture-simplifier
+    restart: unless-stopped
+    ports:
+      - "12150:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=sqlite:///./data/data.db
+      - UPLOAD_DIR=/app/uploads
