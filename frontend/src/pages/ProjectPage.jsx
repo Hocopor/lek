@@ -9,6 +9,7 @@ import {
   ArrowLeft, Upload, FileText, Trash2, Loader2, Play, Download,
   Sparkles, BookOpen, Settings2, ChevronDown
 } from 'lucide-react';
+import Markdown from 'react-markdown';
 import toast from 'react-hot-toast';
 
 export default function ProjectPage() {
@@ -257,11 +258,9 @@ export default function ProjectPage() {
                 <BookOpen className="w-5 h-5 text-primary-400" />
                 <h3 className="text-lg font-semibold">Выжимка из {summary.lecture_count} лекций</h3>
               </div>
-              <div className="prose prose-invert max-w-none">
-                <div className="text-dark-200 whitespace-pre-wrap leading-relaxed">
-                  {summary.summary}
+              <div className="prose prose-invert prose-primary max-w-none">
+                  <Markdown>{summary.summary}</Markdown>
                 </div>
-              </div>
             </div>
           </motion.div>
         )}

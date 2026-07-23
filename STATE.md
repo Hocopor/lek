@@ -37,6 +37,12 @@
 - [x] T25: Сборка frontend — npm install + npm run build OK
 - [x] T26: Исправлена ошибка с иконкой Summary
 
+### Фаза 6: Markdown рендеринг ✅
+- [x] T27: Установка react-markdown + @tailwindcss/typography
+- [x] T28: Обновление LecturePage — рендер result_text и extended_text через Markdown
+- [x] T29: Обновление ProjectPage — рендер summary через Markdown
+- [x] T30: Сборка frontend OK
+
 ## Блокеры
 - Нет
 

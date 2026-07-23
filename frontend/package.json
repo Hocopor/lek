@@ -9,15 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.0",
     "axios": "^1.7.2",
     "framer-motion": "^11.2.0",
     "lucide-react": "^0.378.0",
-    "react-hot-toast": "^2.4.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^6.23.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",

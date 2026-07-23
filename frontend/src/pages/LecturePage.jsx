@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getLecture, processLecture, downloadLecture } from '../services/api';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Download, Loader2, Play, Sparkles, BookOpen } from 'lucide-react';
+import Markdown from 'react-markdown';
 import toast from 'react-hot-toast';
 
 export default function LecturePage() {
@@ -148,8 +149,8 @@ export default function LecturePage() {
               <Sparkles className="w-5 h-5 text-primary-400" />
               <h2 className="text-lg font-semibold text-primary-300">Результат</h2>
             </div>
-            <div className="text-dark-200 whitespace-pre-wrap leading-relaxed">
-              {lecture.result_text}
+            <div className="prose prose-invert prose-primary max-w-none">
+              <Markdown>{lecture.result_text}</Markdown>
             </div>
           </motion.div>
         )}
@@ -165,8 +166,8 @@ export default function LecturePage() {
               <BookOpen className="w-5 h-5 text-amber-400" />
               <h2 className="text-lg font-semibold text-amber-300">Дополнительная информация</h2>
             </div>
-            <div className="text-dark-200 whitespace-pre-wrap leading-relaxed">
-              {lecture.extended_text}
+            <div className="prose prose-invert prose-primary max-w-none">
+              <Markdown>{lecture.extended_text}</Markdown>
             </div>
           </motion.div>
         )}
