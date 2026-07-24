@@ -1,6 +1,7 @@
 from openai import OpenAI
 from config import get_settings
 import docx
+from pptx import Presentation
 import io
 
 settings = get_settings()
@@ -14,6 +15,19 @@ client = OpenAI(
 def read_docx(file_content: bytes) -> str:
     doc = docx.Document(io.BytesIO(file_content))
     return "\n".join([p.text for p in doc.paragraphs if p.text.strip()])
+
+
+def read_pptx(file_content: bytes) -> str:
+    prs = Presentation(io.BytesIO(file_content))
+    texts = []
+    for slide in prs.slides:
+        for shape in slide.shapes:
+            if shape.has_text_frame:
+                for paragraph in shape.text_frame.paragraphs:
+                    text = paragraph.text.strip()
+                    if text:
+                        texts.append(text)
+    return "\n".join(texts)
 
 
 def create_docx(text: str) -> bytes:

@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     APP_PASSWORD: str = "changeme"
     DEEPSEEK_API_KEY: str = ""
     DEEPSEEK_BASE_URL: str = "https://api.deepseek.com"
-    DEEPSEEK_MODEL: str = "deepseek-chat"
+    DEEPSEEK_MODEL: str = "deepseek-v4-flash"
     DATABASE_URL: str = "sqlite:///./data.db"
     UPLOAD_DIR: str = "./uploads"
 

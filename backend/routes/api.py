@@ -6,7 +6,7 @@ from schemas import (
     ProjectCreate, ProjectResponse, LectureResponse,
     LectureResultResponse, ProcessOptions, SummaryResponse,
 )
-from services.llm import read_docx, create_docx, process_text
+from services.llm import read_docx, read_pptx, create_docx, process_text
 from auth import verify_token
 from fastapi import Header
 import os
@@ -81,7 +81,10 @@ async def upload_lectures(
         with open(file_path, "wb") as f:
             f.write(content)
 
-        original_text = read_docx(content)
+        if file.filename.lower().endswith('.pptx'):
+            original_text = read_pptx(content)
+        else:
+            original_text = read_docx(content)
         lecture = Lecture(
             project_id=project_id,
             filename=file.filename,

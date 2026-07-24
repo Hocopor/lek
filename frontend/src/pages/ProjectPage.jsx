@@ -155,7 +155,7 @@ export default function ProjectPage() {
           ref={fileInput}
           type="file"
           multiple
-          accept=".docx"
+          accept=".docx,.pptx"
           onChange={handleUpload}
           className="hidden"
         />
@@ -274,7 +274,7 @@ export default function ProjectPage() {
         >
           <FileText className="w-16 h-16 text-dark-600 mx-auto mb-4" />
           <h3 className="text-xl font-medium text-dark-300">Нет лекций</h3>
-          <p className="text-dark-500 mt-2">Загрузите DOCX файлы, чтобы начать</p>
+          <p className="text-dark-500 mt-2">Загрузите DOCX или PPTX файлы, чтобы начать</p>
         </motion.div>
       ) : (
         <div className="space-y-3">
